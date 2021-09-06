@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Torishiki",
+    "location": "Japan",
+    "cuisine": "Yakitori",
+    "starvalue": 1
+  },
+  {
+    "name": "Ode",
+    "location": "Japan",
+    "cuisine": "French",
+    "starvalue": 1
+  },
+  {
+    "name": "Le Coq",
+    "location": "Japan",
+    "cuisine": "French",
+    "starvalue": 1
+  },
+  {
+    "name": "Tentempura Uchitsu",
+    "location": "Japan",
+    "cuisine": "Tempura",
+    "starvalue": 2
+  },
+  {
+    "name": "Tempura Ginya",
+    "location": "Japan",
+    "cuisine": "Tempura",
+    "starvalue": 2
+  },
+  {
+    "name": "Seisoka",
+    "location": "Japan",
+    "cuisine": "Japanese",
+    "starvalue": 2
+  },
+  {
+    "name": "Sazenka",
+    "location": "Japan",
+    "cuisine": "Chinese",
+    "starvalue": 3
+  },
+  {
+    "name": "Prisma",
+    "location": "Japan",
+    "cuisine": "Italian",
+    "starvalue": 2
+  },
+  {
+    "name": "Jushu",
+    "location": "Japan",
+    "cuisine": "Japanese",
+    "starvalue": 2
+  },
+  {
+    "name": "Kanda",
+    "location": "Japan",
+    "cuisine": "Japanese",
+    "starvalue": 3
+  },
+  {
+    "name": "Jizozushi",
+    "location": "Japan",
+    "cuisine": "Sushi",
+    "starvalue": 1
+  },
+  {
+    "name": "Suan Thip",
+    "location": "Thailand",
+    "cuisine": "Thai",
+    "starvalue": 1
+  },
+  {
+    "name": "Sorn",
+    "location": "Thailand",
+    "cuisine": "Southern Thai",
+    "starvalue": 2
+  },
+  {
+    "name": "R-Haan",
+    "location": "Thailand",
+    "cuisine": "Thai",
+    "starvalue": 2
+  }
+]
