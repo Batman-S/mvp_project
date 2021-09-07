@@ -22,7 +22,7 @@ app.get("/api/users", async (req, res) => {
     console.log("Error loading users", err);
     res.sendStatus(500);
   }
-})
+});
 
 app.get("/api/restaurants", async (req, res) => {
   try {
@@ -32,29 +32,43 @@ app.get("/api/restaurants", async (req, res) => {
     console.log("Error loading users", err);
     res.sendStatus(500);
   }
-})
-
+});
 
 app.get("/api/users_visited_restaurants", async (req, res) => {
   try {
-    const users_visited_restaurants = await db.select().table("users_visited_restaurants");
+    const users_visited_restaurants = await db("restaurants")
+      .join(
+        "users_visited_restaurants",
+        "restaurants.id",
+        "=",
+        "users_visited_restaurants.restaurant_id"
+      )
+      .select("*");
+
     res.json(users_visited_restaurants);
   } catch (err) {
     console.log("Error loading users", err);
     res.sendStatus(500);
   }
-})
+});
+
+
+
+
 
 app.post("/api/users_visited_restaurants", async (req, res) => {
   try {
     const { user_id, restaurant_id } = req.body;
-    await db("users_visited_restaurants").insert({ user_id: user_id, restaurant_id: restaurant_id})
+    await db("users_visited_restaurants").insert({
+      user_id: user_id,
+      restaurant_id: restaurant_id,
+    });
     res.sendStatus(200);
   } catch (err) {
     console.log("Error loading users", err);
     res.sendStatus(500);
   }
-})
+});
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 

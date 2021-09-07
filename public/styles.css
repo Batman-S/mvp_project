@@ -7,6 +7,43 @@
   width: 20%;
 }
 
-.icongroup {
-    
+.countstaricon {
+  height: 25%;
+  width: 25%;
+}
+
+.countcarousel {
+  margin-top: 40%;
+}
+
+.starcount {
+  margin-left: 45%;
+}
+
+.citypicture {
+    position: relative;
+    border-radius: 25px;
+    padding: 20px;
+    width: 60%;
+    height: 70%;
+    margin: auto;
+    filter: drop-shadow(0 0 0.75rem #bd2333);
+    background-size: auto;
+    background: url("https://d3h1lg3ksw6i6b.cloudfront.net/site/guide_japan.jpg");
+}
+.citycount {
+  align-items: center;
+  height: 300px;
+  width: 50%;
+}
+
+
+.offcanvhead{
+    color: white;
+}
+
+
+
+.offcanvbody{
+    color: white;
 }
