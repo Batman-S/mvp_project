@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 export const TwoStarCount = ({ starList }) => {
   return (
-    <div>
+    <div className="starcount-container">
       <Link to="/twostarinfo">
         <div className="starcount">
           <img className="countstaricon" src={staricon} />
           <img className="countstaricon" src={staricon} />
         </div>
       </Link>
-      {starList.length}
+      <h1 className="countvalue">{starList.length}</h1>
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../App";
+import { RestaurantInfo } from "../RestaurantInfo";
+
 const _ = require("lodash");
 
 export const TwoStarInfo = () => {
@@ -11,15 +13,7 @@ export const TwoStarInfo = () => {
   return (
     <div>
       {twoStarList.map((store) => {
-        return (
-          <Card>
-            <Card.Title>{store.name}</Card.Title>
-            <Card.Body>
-              <Card.Text>Date Visited: {store.datevisited}</Card.Text>
-              <Card.Text>Michelin Stars: {store.starvalue}</Card.Text>
-            </Card.Body>
-          </Card>
-        );
+        return <RestaurantInfo name={store.name} date={store.datevisited} />;
       })}
 
       <div>

@@ -2,48 +2,142 @@
   background-color: #bd2333;
 }
 
-.staricon {
-  height: 50%;
-  width: 20%;
-}
-
 .countstaricon {
-  height: 25%;
-  width: 25%;
+  height: 80px;
+  width: 65px;
 }
 
 .countcarousel {
-  margin-top: 40%;
-}
-
-.starcount {
-  margin-left: 45%;
+  margin-top: 15%;
+  height: 250px;
 }
 
 .citypicture {
-    position: relative;
-    border-radius: 25px;
-    padding: 20px;
-    width: 60%;
-    height: 70%;
-    margin: auto;
-    filter: drop-shadow(0 0 0.75rem #bd2333);
-    background-size: auto;
-    background: url("https://d3h1lg3ksw6i6b.cloudfront.net/site/guide_japan.jpg");
+  margin: auto;
+  
 }
 .citycount {
+  display: flex;
   align-items: center;
+  justify-content: center;
   height: 300px;
-  width: 50%;
+  width: 100%;
+}
+
+.offcanvhead {
+  color: white;
+}
+
+.offcanvbody {
+  color: white;
+}
+
+.icongroup {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
+  margin-top: 200px;
 }
 
 
-.offcanvhead{
-    color: white;
+@keyframes fadeAndScale {
+    0% {
+        opacity: 0;
+        transform: scale3d(.75,.75,1);
+    }
+
+    70% {
+        opacity: 0;
+        transform: scale3d(.75,.75,1)
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1,1,1)
+    }
+
+}
+ .staricon1 {
+  height: 75px;
+  width: 60px;
+  animation: fadeAndScale 4s cubic-bezier(.39,-1.05,.58,1.95);
+  animation-delay: -3s;
+  transform-origin: center-bottom;
+}
+ .staricon2 {
+  height: 75px;
+  width: 60px;
+  animation: fadeAndScale 6s cubic-bezier(.39,-1.05,.58,1.95);
+  animation-delay: -3s;
+  transform-origin: center-bottom;
+}
+ .staricon3 {
+  height: 75px;
+  width: 60px;
+  animation: fadeAndScale 9s cubic-bezier(.39,-1.05,.58,1.95);
+  animation-delay: -3s;
+  transform-origin: center-bottom;
 }
 
-
-
-.offcanvbody{
-    color: white;
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.starbellytitle {
+  font-family: "Italianno", cursive;
+  font-weight: bold;
+  font-size: 60px;
+  color: white;
+}
+
+.starcount {
+  display: flex;
+  justify-content: center;
+}
+
+.starcount-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countvalue {
+  font-family: "Iceland", cursive;
+  margin-top: 40px;
+  color: gold;
+  font-size: 50px;
+  text-shadow: 2px 2px 3px purple, 0 0 1em pink, 0 0 0.2em black;
+}
+
+.citycount-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none !important;
+  width: 75%;
+  text-align: center;
+  color: white;
+}
+
+strong {
+  background: none !important;
+}
+.addbtn-container {
+    display:flex;
+    margin-top: 30%;
+    align-items: center;
+    justify-content: center;
+}
+.addbtn {
+}
+
+.overlay {
+  background: none !important;
+}
+

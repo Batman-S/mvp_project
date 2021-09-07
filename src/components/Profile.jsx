@@ -1,15 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import StarCounts from "./starcounts/StarCounts";
+import { useAuth } from "./auth/contexts/AuthContext";
 import CityCount from "./CityCount";
-import { Button, Offcanvas, Form, Col, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { ThemeContext } from "../App";
+import {
+  Button,
+  Offcanvas,
+  Form,
+  Col,
+  Row,
+  OverlayTrigger,
+  Tooltip,
+  Alert,
+  Card,
+} from "react-bootstrap";
 import axios from "axios";
 const _ = require("lodash");
 
 export const Profile = () => {
+  const fullList = useContext(ThemeContext);
   const [show, setShow] = useState(false);
   const [newStarCount, setNewStarCount] = useState("");
   const [newLocation, setNewLocation] = useState("Test");
   const [newRestName, setNewRestName] = useState("");
+  const [mostVisited, setMostVisited] = useState("Japan");
+
+  useEffect(() => {
+    const currentMax = _.filter(fullList, { location: mostVisited }).length;
+
+    //sad life, hardcode for mvp
+    if (_.filter(fullList, { location: "Thailand" }).length > currentMax) {
+      setMostVisited("Thailand");
+    }
+  }, [fullList]);
+
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
@@ -18,7 +42,7 @@ export const Profile = () => {
     const targetRestaurant = _.filter(restaurants.data, { name: newRestName });
     const targetRestId = targetRestaurant[0].id;
 
-    await axios.post("/api/users_visited_restaurants", {
+    axios.post("/api/users_visited_restaurants", {
       user_id: 1,
       restaurant_id: targetRestId,
     });
@@ -30,19 +54,26 @@ export const Profile = () => {
   return (
     <div className="profile">
       <StarCounts />
-      <CityCount />
+      <CityCount mostVisited={mostVisited} />
       <OverlayTrigger
-        key="right"
-        placement="right"
+        key="top"
+        placement="top"
         overlay={
-          <Tooltip id={`tooltip-right`}>
+          <Tooltip className="overlay" id={`tooltip-top`}>
             Just use the restaurant name!
           </Tooltip>
         }
       >
-        <Button variant="warning" onClick={handleShow}>
-          Add Visit
-        </Button>
+        <div className="addbtn-container">
+          <Button
+            className="addbtn"
+            variant="success"
+            size="lg"
+            onClick={handleShow}
+          >
+            Add Visit
+          </Button>
+        </div>
       </OverlayTrigger>
 
       <Offcanvas show={show} onHide={handleClose} placement="bottom">

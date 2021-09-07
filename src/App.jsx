@@ -7,6 +7,9 @@ import OneStarInfo from "./components/starinfo/OneStarInfo";
 import TwoStarInfo from "./components/starinfo/TwoStarInfo";
 import ThreeStarInfo from "./components/starinfo/ThreeStarInfo";
 import React, { useState, useEffect } from "react";
+import { AuthProvider } from "./components/auth/contexts/AuthContext";
+import SignUp from "./components/auth/SignUp";
+import Login from "./components/auth/Login";
 
 export const ThemeContext = React.createContext();
 
@@ -32,6 +35,10 @@ function App() {
             <Route path="/onestarinfo" component={OneStarInfo} />
             <Route path="/twostarinfo" component={TwoStarInfo} />
             <Route path="/threestarinfo" component={ThreeStarInfo} />
+            <AuthProvider>
+              <Route path="/signup" component={SignUp} />
+              <Route path="/login" component={Login}/>
+            </AuthProvider>
           </Switch>
         </BrowserRouter>
       </ThemeContext.Provider>

@@ -53,9 +53,6 @@ app.get("/api/users_visited_restaurants", async (req, res) => {
 });
 
 
-
-
-
 app.post("/api/users_visited_restaurants", async (req, res) => {
   try {
     const { user_id, restaurant_id } = req.body;
