@@ -13,7 +13,7 @@ export const TwoStarInfo = () => {
   return (
     <div>
       {twoStarList.map((store) => {
-        return <RestaurantInfo name={store.name} date={store.datevisited} />;
+        return <RestaurantInfo key={store.id} name={store.name} date={store.datevisited} />;
       })}
 
       <div>

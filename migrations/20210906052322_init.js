@@ -14,21 +14,31 @@ exports.up = function (knex) {
     }),
 
     knex.schema.createTable("users_visited_restaurants", (table) => {
-        table.increments("id", { primaryKey: true });
-        table.date("datevisited").notNullable().defaultTo(knex.fn.now());
+      table.increments("id", { primaryKey: true });
+      table.date("datevisited").notNullable().defaultTo(knex.fn.now());
 
       table.integer("user_id", { deferrable: "deferred" }).unsigned();
       table.integer("restaurant_id", { deferrable: "deferred" }).unsigned();
 
-      table
-        .foreign("user_id")
-        .references("users.id")
-        .onDelete("CASCADE");
+      table.foreign("user_id").references("users.id").onDelete("CASCADE");
       table
         .foreign("restaurant_id")
         .references("restaurants.id")
         .onDelete("CASCADE");
-        
+    }),
+    
+    knex.schema.createTable("users_notes_restaurants", (table) => {
+      table.increments("id", { primaryKey: true });
+      table.date("datecreated").notNullable().defaultTo(knex.fn.now());
+      table.string("notedetails").notNullable();
+      table.integer("user_id", { deferrable: "deferred" }).unsigned();
+      table.integer("restaurant_id", { deferrable: "deferred" }).unsigned();
+
+      table.foreign("user_id").references("users.id").onDelete("CASCADE");
+      table
+        .foreign("restaurant_id")
+        .references("restaurants.id")
+        .onDelete("CASCADE");
     }),
   ]);
 };

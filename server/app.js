@@ -52,7 +52,6 @@ app.get("/api/users_visited_restaurants", async (req, res) => {
   }
 });
 
-
 app.post("/api/users_visited_restaurants", async (req, res) => {
   try {
     const { user_id, restaurant_id } = req.body;
@@ -63,6 +62,39 @@ app.post("/api/users_visited_restaurants", async (req, res) => {
     res.sendStatus(200);
   } catch (err) {
     console.log("Error loading users", err);
+    res.sendStatus(500);
+  }
+});
+
+app.get("/api/users_notes_restaurants", async (req, res) => {
+  try {
+    const users_notes_restaurants = await db("restaurants")
+      .join(
+        "users_notes_restaurants",
+        "restaurants.id",
+        "=",
+        "users_notes_restaurants.restaurant_id"
+      )
+      .select("*");
+
+    res.json(users_notes_restaurants);
+  } catch (err) {
+    console.log("Error loading notes", err);
+    res.sendStatus(500);
+  }
+});
+
+app.post("/api/users_notes_restaurants", async (req, res) => {
+  try {
+    const { user_id, restaurant_id, notedetails } = req.body;
+    await db("users_notes_restaurants").insert({
+      user_id: user_id,
+      restaurant_id: restaurant_id,
+      notedetails: notedetails
+    });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log("Error creating note", err);
     res.sendStatus(500);
   }
 });
