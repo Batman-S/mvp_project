@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import { AuthProvider } from "./components/auth/contexts/AuthContext";
 import SignUp from "./components/auth/SignUp";
 import Login from "./components/auth/Login";
+import UserNotes from "./components/UserNotes";
 
 export const ThemeContext = React.createContext();
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="/onestarinfo" component={OneStarInfo} />
               <Route path="/twostarinfo" component={TwoStarInfo} />
               <Route path="/threestarinfo" component={ThreeStarInfo} />
+              <Route path="/usernotes" component={UserNotes} />
             </AuthProvider>
           </Switch>
         </BrowserRouter>
