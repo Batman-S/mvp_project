@@ -1,5 +1,6 @@
 {
   "name": "mvp-project",
+  "author": "Batman-S",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "knex": "^0.95.11",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.0.0",
     "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
@@ -47,7 +49,7 @@
       "not op_mini all"
     ],
     "engines": {
-      "node": ">=9.10.0"
+      "node": "14.x"
     },
     "development": [
       "last 1 chrome version",
