@@ -8,8 +8,8 @@
 }
 
 .countcarousel {
-  margin-top: 15%;
-  height: 250px;
+  margin-top: 20%;
+  height: 220px;
 }
 
 .citypicture {
@@ -141,3 +141,9 @@ strong {
   background: none !important;
 }
 
+.appbar {
+  background-color: white !important;
+  justify-content: space-between;
+  color: #bd2333;
+  
+}

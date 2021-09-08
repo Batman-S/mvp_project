@@ -30,14 +30,14 @@ function App() {
       <ThemeContext.Provider value={fullList}>
         <BrowserRouter>
           <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/profile" component={Profile} starList={fullList} />
-            <Route path="/onestarinfo" component={OneStarInfo} />
-            <Route path="/twostarinfo" component={TwoStarInfo} />
-            <Route path="/threestarinfo" component={ThreeStarInfo} />
             <AuthProvider>
               <Route path="/signup" component={SignUp} />
-              <Route path="/login" component={Login}/>
+              <Route path="/login" component={Login} />
+              <Route path="/" component={Home} exact />
+              <Route path="/profile" component={Profile} starList={fullList} />
+              <Route path="/onestarinfo" component={OneStarInfo} />
+              <Route path="/twostarinfo" component={TwoStarInfo} />
+              <Route path="/threestarinfo" component={ThreeStarInfo} />
             </AuthProvider>
           </Switch>
         </BrowserRouter>
